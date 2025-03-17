@@ -52,7 +52,17 @@ class _RegistroScreenState extends State<RegistroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Registro Sola Gracia')),
+      appBar: AppBar(
+        title: Padding(
+          padding: const EdgeInsets.only(top: 12.0), // Ajusta el padding a tu gusto
+          child: Center(
+            child: Image.asset(
+              'assets/images/logo.png',
+              height: 80,
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -62,7 +72,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
               children: [
                 TextFormField(
                   controller: _nombreController,
-                  decoration: const InputDecoration(labelText: 'Nombre'),
+                  decoration: const InputDecoration(labelText: 'Nombre del visitante'),
                   validator: (value) => value!.isEmpty ? 'Campo obligatorio' : null,
                 ),
                 DropdownButtonFormField(
@@ -97,10 +107,10 @@ class _RegistroScreenState extends State<RegistroScreen> {
                   decoration: const InputDecoration(labelText: 'Notas'),
                   maxLines: 3,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 25),
                 ElevatedButton(
                   onPressed: _guardarRegistro,
-                  child: const Text('Guardar'),
+                  child: const Text('Guardar registro'),
                 ),
               ],
             ),
