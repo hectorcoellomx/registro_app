@@ -59,7 +59,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 35),
+                const SizedBox(height: 40),
                 Center(
                   child: Image.asset(
                     'assets/images/logo.png',
