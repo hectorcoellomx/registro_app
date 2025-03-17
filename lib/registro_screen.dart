@@ -52,17 +52,6 @@ class _RegistroScreenState extends State<RegistroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.only(top: 12.0), // Ajusta el padding a tu gusto
-          child: Center(
-            child: Image.asset(
-              'assets/images/logo.png',
-              height: 80,
-            ),
-          ),
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -70,6 +59,14 @@ class _RegistroScreenState extends State<RegistroScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(height: 35),
+                Center(
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    height: 80,
+                  ),
+                ),
+                const SizedBox(height: 2),
                 TextFormField(
                   controller: _nombreController,
                   decoration: const InputDecoration(labelText: 'Nombre del visitante'),
