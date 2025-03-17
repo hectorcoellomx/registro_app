@@ -18,11 +18,12 @@ class DetalleRegistrosScreen extends StatelessWidget {
   void _compartirPorWhatsApp() async {
     String mensaje = "Registros del $fecha:\n\n";
     for (var registro in registros) {
-      mensaje += "Nombre: ${registro['nombre']}, Sexo: ${registro['sexo']}, ";
-      mensaje += "Teléfono: ${registro['telefono']}, Dirección: ${registro['direccion']}, ";
-      mensaje += "Es cristiano: ${registro['esCristiano'] == 1 ? 'Sí' : 'No'}, ";
-      mensaje += "Asiste a otra iglesia: ${registro['asisteOtraIglesia'] == 1 ? 'Sí' : 'No'}, ";
-      mensaje += "Notas: ${registro['notas']}\n";
+      mensaje += "Nombre: ${registro['nombre']}\nSexo: ${registro['sexo']}\n";
+      mensaje += "Teléfono: ${registro['telefono']}\nDirección: ${registro['direccion']}\n";
+      mensaje += "Cristiano: ${registro['esCristiano'] == 1 ? 'Sí' : 'No'}\n";
+      mensaje += "Asiste a otra iglesia: ${registro['asisteOtraIglesia'] == 1 ? 'Sí' : 'No'}\n";
+      mensaje += "Notas: ${registro['notas']}\n\n";
+      mensaje += "--------\n\n";
     }
 
     final uri = Uri.parse("whatsapp://send?text=${Uri.encodeComponent(mensaje)}");
