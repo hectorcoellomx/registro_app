@@ -52,7 +52,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Registro')),
+      appBar: AppBar(title: const Text('Registro Sola Gracia')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
