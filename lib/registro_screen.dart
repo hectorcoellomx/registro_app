@@ -59,7 +59,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 40),
+                const SizedBox(height: 42),
                 Center(
                   child: Image.asset(
                     'assets/images/logo.png',
@@ -72,13 +72,26 @@ class _RegistroScreenState extends State<RegistroScreen> {
                   decoration: const InputDecoration(labelText: 'Nombre del visitante'),
                   validator: (value) => value!.isEmpty ? 'Campo obligatorio' : null,
                 ),
-                DropdownButtonFormField(
-                  value: _sexo,
-                  items: ['Hombre', 'Mujer']
-                      .map((e) => DropdownMenuItem(value: e, child: Text(e)))
-                      .toList(),
-                  onChanged: (value) => setState(() => _sexo = value!),
-                  decoration: const InputDecoration(labelText: 'Sexo'),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    Expanded(
+                      child: RadioListTile(
+                        title: const Text('Hombre'),
+                        value: 'Hombre',
+                        groupValue: _sexo,
+                        onChanged: (value) => setState(() => _sexo = value!),
+                      ),
+                    ),
+                    Expanded(
+                      child: RadioListTile(
+                        title: const Text('Mujer'),
+                        value: 'Mujer',
+                        groupValue: _sexo,
+                        onChanged: (value) => setState(() => _sexo = value!),
+                      ),
+                    ),
+                  ],
                 ),
                 TextFormField(
                   controller: _telefonoController,
@@ -89,6 +102,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
                   controller: _direccionController,
                   decoration: const InputDecoration(labelText: 'Dirección'),
                 ),
+                const SizedBox(height: 15),
                 SwitchListTile(
                   title: const Text('¿Es cristiano?'),
                   value: _esCristiano,
@@ -102,9 +116,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
                 TextFormField(
                   controller: _notasController,
                   decoration: const InputDecoration(labelText: 'Notas'),
-                  maxLines: 3,
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: _guardarRegistro,
                   child: const Text('Guardar registro'),
